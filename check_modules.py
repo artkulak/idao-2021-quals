@@ -1,3 +1,4 @@
+import logging
 modules = [
     "torch",
     "torchvision",
@@ -25,5 +26,8 @@ def module_exists(module_name):
 
 
 if __name__ == "__main__":
+    print("Loading module checking")
     for module in modules:
         print(f"{module}: {module_exists(module)}")
+    
+    print("Finished module checking")
