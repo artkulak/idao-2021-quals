@@ -1,40 +1,15 @@
-print("Imported os")
-
 import os 
 os.environ['MPLCONFIGDIR'] = '.'
-
-print("Imported configparser")
 import configparser
-
-print("Imported logging")
 import logging
-
-print("Imported pathlib")
 import pathlib as path
-
-print("Imported collections")
 from collections import defaultdict
-
-print("Imported numpy")
 import numpy as np
-
-print("Imported pandas")
 import pandas as pd
-
-print("Imported glob")
 import glob
-
-
-print("Imported idao.dataloader")
 from idao.dataloader import DataGenerator
-
-print("Imported tensorflow.keras")
 from tensorflow.keras import models
-
-print("Imported tensorflow")
 import tensorflow as tf
-
-print('Init defaultdict')
 dict_pred = defaultdict(list)
 
 
@@ -92,7 +67,6 @@ def main(cfg):
 
 
 if __name__ == "__main__":
-    print("Started inference")
     os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
     config = configparser.ConfigParser()

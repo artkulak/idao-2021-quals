@@ -10,7 +10,7 @@ class DataGenerator(tf.keras.utils.Sequence):
         self.images = images
         self.indices = np.arange(len(images))
         self.batch_size = batch_size
-        self.shuffle = True
+        self.shuffle = shuffle
         
         self.on_epoch_end()
 
