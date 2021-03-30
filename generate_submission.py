@@ -39,12 +39,12 @@ def main(cfg):
     PATH = path.Path(cfg["DATA"]["DatasetPath"])
     PUBLIC_PATH = PATH / 'public_test'
     PRIVATE_PATH = PATH / 'private_test'
+    
 
     image_paths = {
         'public': glob.glob(str(PUBLIC_PATH / '*.png')),
         'private': glob.glob(str(PRIVATE_PATH / '*.png'))
     }
-    
 
     dataloaders = {
         'public': DataGenerator(images=image_paths['public'], batch_size=1, shuffle = False),

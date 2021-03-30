@@ -26,11 +26,11 @@ class DataGenerator(tf.keras.utils.Sequence):
 
     def on_epoch_end(self):
         self.index = np.arange(len(self.indices))
-        if self.shuffle == True:
+        if self.shuffle:
             np.random.shuffle(self.index)
 
     def __get_data(self, batch):
-        X = np.zeros((self.batch_size, 150, 150, 3))
+        X = np.zeros((self.batch_size, 128, 128, 3))
         for i, idx in enumerate(batch):
             with Image.open(self.images[idx]) as img:
                 image = np.asarray(img)
