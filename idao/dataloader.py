@@ -35,7 +35,10 @@ class DataGenerator(tf.keras.utils.Sequence):
             with Image.open(self.images[idx]) as img:
                 image = np.asarray(img)
             image = image.reshape(image.shape[0], image.shape[1], 1)
-            image = np.concatenate([image, image, image], axis = 2)[225:375, 225:375, :]
+            image = np.concatenate([image, image, image], axis = 2)
+            
+            center = image.shape[0] // 2
+            image = image[center-128//2:center+128//2,center-128//2:center+128//2, :]
             X[i,] = image
 
         return X / 255.0
