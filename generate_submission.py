@@ -10,8 +10,25 @@ import glob
 from idao.dataloader import DataGenerator
 from tensorflow.keras import models
 import tensorflow as tf
+import numpy as np
 dict_pred = defaultdict(list)
 
+def postprocess(df):
+    map_values = lambda array, values:  values[np.argmin(np.abs(array.reshape(-1,1) - values.reshape(1, -1)), axis = 1)]
+
+    public_length = 1502
+    public_zero_preds = np.argsort(df.iloc[:public_length]['classification_predictions'].values)[:public_length//2]
+    public_one_preds = np.argsort(df.iloc[:public_length]['classification_predictions'].values)[public_length//2:]
+    df.loc[public_zero_preds, 'regression_predictions'] = map_values(df.iloc[public_zero_preds, 2].values, np.array([1,6,20]))
+    df.loc[public_one_preds, 'regression_predictions'] = map_values(df.iloc[public_one_preds, 2].values, np.array([3,10,30]))
+
+    private_length = df.shape[0] - public_length
+    private_zero_preds = public_length + np.argsort(df.iloc[public_length:]['classification_predictions'].values)[:private_length//2]
+    private_one_preds = public_length + np.argsort(df.iloc[public_length:]['classification_predictions'].values)[private_length//2:]
+    df.loc[private_zero_preds, 'regression_predictions'] = map_values(df.iloc[private_zero_preds, 2].values, np.array([3,10,30]))
+    df.loc[private_one_preds, 'regression_predictions'] = map_values(df.iloc[private_one_preds, 2].values, np.array([1,6,20]))
+
+    return df
 
 def make_csv(mode, data_generator, model_path, prediction_files, cfg):
     logging.info("Loading checkpoint")
@@ -47,8 +64,8 @@ def main(cfg):
     }
 
     dataloaders = {
-        'public': DataGenerator(images=image_paths['public'], batch_size=1, shuffle = False),
-        'private': DataGenerator(images=image_paths['private'], batch_size=1, shuffle = False)
+        'public': DataGenerator(images=image_paths['public'], batch_size=4, shuffle = False),
+        'private': DataGenerator(images=image_paths['private'], batch_size=4, shuffle = False)
     }
 
     for dl_name in ['public', 'private']:
@@ -63,6 +80,8 @@ def main(cfg):
         dict_pred,
         columns=["id", "classification_predictions", "regression_predictions"],
     )
+
+    data_frame = postprocess(data_frame)
     data_frame.to_csv("submission.csv", index=False, header=True)
 
 
