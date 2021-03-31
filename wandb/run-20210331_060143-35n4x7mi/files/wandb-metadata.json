@@ -1,0 +1,26 @@
+{
+    "os": "Linux-4.4.0-184-generic-x86_64-with-Ubuntu-18.04-bionic",
+    "python": "3.6.9",
+    "heartbeatAt": "2021-03-31T06:01:46.100968",
+    "startedAt": "2021-03-31T06:01:43.869343",
+    "docker": null,
+    "gpu": "Tesla V100-SXM2-16GB",
+    "gpu_count": 1,
+    "cpu_count": 80,
+    "cuda": null,
+    "args": [
+        "-f",
+        "/root/.local/share/jupyter/runtime/kernel-c5c9aabc-ba49-4ebe-99b0-088e759e02a8.json"
+    ],
+    "state": "running",
+    "program": "idao-2021-quals/Classification.ipynb",
+    "root": "/root/idao-2021-quals",
+    "git": {
+        "remote": "https://github.com/artkulak/idao-2021-quals.git",
+        "commit": "59477cc5799acf5ba072faf63aabcbcf962f6137"
+    },
+    "email": "art_kulak@mail.ru",
+    "host": "10aec7054e25",
+    "username": "root",
+    "executable": "/usr/bin/python3"
+}
