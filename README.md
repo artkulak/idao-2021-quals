@@ -1,7 +1,7 @@
 # IDAO 2021 Online Stage
 **Team: CHAD DATA SCIENTISTS**
 
-***Private test results pending***
+**Private test results pending**
 
 
 * KUDOS to my teammates:
