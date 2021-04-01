@@ -64,8 +64,8 @@ def main(cfg):
     }
 
     dataloaders = {
-        'public': DataGenerator(images=image_paths['public'], batch_size=4, shuffle = False),
-        'private': DataGenerator(images=image_paths['private'], batch_size=4, shuffle = False)
+        'public': DataGenerator(images=image_paths['public'], batch_size=1, shuffle = False),
+        'private': DataGenerator(images=image_paths['private'], batch_size=1, shuffle = False)
     }
 
     for dl_name in ['public', 'private']:
