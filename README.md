@@ -29,7 +29,7 @@ In all cases, while traveling in gas, ionised electrons will be subject to diﬀ
 In this competition we propose you images taken from 12 classes (6 classes of ER and 6 of NR) obtained by simulating detector response to ER and NR events with diﬀerent energies.
 The test asks to properly assign each image to the correct particle type (ER/NR) and reconstruct the particle angle. PIC PIC
 
-<b>Objective</b>
+<b>Objective</b><br>
 Your objective is to create a model that, given an event, outputs the energy of the particle.
 In the data there are electrons, He nucleus and energies in the range 1, 3, 6, 10, 20, 30 keV - 12 classes in total. We split those classes into training classes and test classes, with 3, 10, 30 keV electrons and 1, 6, 20 keV He being training classes and the remaining six being the test classes.
 
