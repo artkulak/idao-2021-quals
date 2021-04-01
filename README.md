@@ -38,5 +38,5 @@ Your objective is to create a model that, given an event, outputs the energy of 
 In the data there are electrons, He nucleus and energies in the range 1, 3, 6, 10, 20, 30 keV - 12 classes in total. We split those classes into training classes and test classes, with 3, 10, 30 keV electrons and 1, 6, 20 keV He being training classes and the remaining six being the test classes.
 
 ## Model description
-In our solution we chose to create 2 separate models: one for Classification and One for Regression, not to overfit to the public leaderboard. Both models are pure CNNs: for `track-1` we used DenseNet201 and for `track-2` we used MobileNetV2 for speed.
+In our solution we chose to create 2 separate models: one for Classification and one for Regression, not to overfit to the public leaderboard. We also used small given sample of private data to validate our models. Both models are pure CNNs: for `track-1` we used DenseNet201 and for `track-2` we used MobileNetV2 for speed.
 We also used some label postprocessing which increased the score in the end
