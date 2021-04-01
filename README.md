@@ -25,7 +25,8 @@ Several experiments have been studied to detect those trails and possibly to rec
 PIC
 Low energy photons produced by natural radioactivity can ionize electrons from atoms and molecules in the detector, producing recoils that would represent an important and dangerous background to Dark Matter signals. Electron recoils (ER) will produce distinctive and diverse patterns of ionization charge and therefore diﬀerent images, given the diﬀerent way they deposit energy and interact with matter.
 
-![](images/particle-examples.png)
+![](images/ER.png)
+![](images/NR.png)
 
 Thus, NR and ER can be eﬃciently identiﬁed and separated down to low kinetic energies by studying the properties of the particle tracks.
 In all cases, while traveling in gas, ionised electrons will be subject to diﬀusion eﬀects that blur ﬁnal images. Moreover, optical sensors used to collect the photons have a small, yet not negligible, electronic noise that adds up to physical signals.
