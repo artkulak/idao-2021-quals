@@ -1,7 +1,7 @@
 # IDAO 2021 Online Stage
 **Team: CHAD DATA SCIENTISTS**
 
-**Private test results pending**
+**Our solution was on the 9th place for track 2 and got us to the finals**
 
 
 * KUDOS to my teammates:
